@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crafts for Care Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav site-nav--top" aria-label="Site navigation">
+      <a class="site-nav__link is-active" href="index.html">Home</a>
+      <a class="site-nav__link" href="about.html">About</a>
+    </nav>
+  </header>
+
+  <div class="page-shell">
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <p class="eyebrow">Craft Calendar</p>
+        <h1>Crafts for Care Club</h1>
+        <p class="sidebar__intro">
+          Browse projects and next club meetings.
+        </p>
+      </div>
+
+      <div class="craft-list" aria-label="Craft projects">
+        <div class="craft-empty">
+          <strong>No craft projects added yet</strong>
+          <span>Use this sidebar for club projects for future meetings.</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Club Hub</p>
+          <h2>Scheduling and creativity in one place.</h2>
+          <p class="hero__text">
+            Keep track of meetings, workshops, and service projects while members quickly browse crafts they want to prepare for or try at home.
+          </p>
+        </div>
+      </section>
+
+      <section class="calendar-panel" aria-labelledby="calendar-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Upcoming Activities</p>
+            <h3 id="calendar-title">April 2026 Calendar</h3>
+          </div>
+        </div>
+
+        <div class="calendar-toolbar">
+          <button type="button" class="calendar-nav" id="prevMonth" aria-label="Previous month">Previous</button>
+          <p class="calendar-month" id="monthLabel">April 2026</p>
+          <button type="button" class="calendar-nav" id="nextMonth" aria-label="Next month">Next</button>
+        </div>
+
+        <div class="calendar-grid" id="calendarGrid" role="grid" aria-label="Interactive club calendar"></div>
+
+        <div class="calendar-management">
+          <article class="event-detail" id="eventDetail" aria-live="polite">
+            <p class="event-detail__eyebrow">Selected date</p>
+            <h4>No event yet</h4>
+            <p class="event-detail__meta">Choose a day and add your own meeting, workshop, or service activity.</p>
+            <p class="event-detail__text">
+              Events you create stay in this browser so the club leader can keep the calendar up to date without editing the code.
+            </p>
+          </article>
+
+          <form class="event-form" id="eventForm">
+            <div class="event-form__header">
+              <p class="eyebrow">Plan Calendar</p>
+              <h4 id="formTitle">Plan event for selected date</h4>
+            </div>
+
+            <label>
+              Event title
+              <input type="text" id="eventTitle" name="title" placeholder="Club meeting or workshop name" required>
+            </label>
+
+            <label>
+              Time
+              <input type="text" id="eventTime" name="time" placeholder="3:30 PM">
+            </label>
+
+            <label>
+              Location
+              <input type="text" id="eventLocation" name="location" placeholder="Room, hall, or campus area">
+            </label>
+
+            <label>
+              Description
+              <textarea id="eventDescription" name="description" rows="4" placeholder="What will members be doing?"></textarea>
+            </label>
+
+            <div class="event-form__actions">
+              <button type="submit" class="button button--primary">Save event</button>
+              <button type="button" class="button button--secondary" id="deleteEvent">Remove event</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="comments-panel" aria-labelledby="comments-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Community Comments</p>
+            <h3 id="comments-title">Notes From Club Members</h3>
+          </div>
+        </div>
+
+        <div class="comments-layout">
+          <form class="comment-form" id="commentForm">
+            <label>
+              Name
+              <input type="text" id="commentName" name="name" placeholder="Your name" required>
+            </label>
+
+            <label>
+              Comment
+              <textarea id="commentText" name="comment" rows="5" placeholder="Share an idea, reminder, or update for the club." required></textarea>
+            </label>
+
+            <div class="event-form__actions">
+              <button type="submit" class="button button--primary">Post comment</button>
+            </div>
+          </form>
+
+          <div class="comment-list" id="commentList" aria-live="polite">
+            <article class="comment-empty" id="commentEmpty">
+              <strong>No comments yet</strong>
+              <span>Club members can leave reminders, ideas, and feedback here.</span>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
